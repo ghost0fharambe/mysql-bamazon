@@ -36,7 +36,7 @@ connection.connect(function (err) {
 
 
 function readProducts() {
-    console.log('Showing all Products.....\n');
+    console.log('---Showing all Products---\n');
     connection.query('SELECT * FROM products', function (err, res) {
         //if (err) throw err;
         //console.log(res);
@@ -49,7 +49,7 @@ function readProducts() {
 };
 
 function buyItem() {
-    console.log("Item Purchase Interface......\n")
+    console.log("---Item Purchase Interface---\n")
     inquirer
         .prompt([{
                 name: "id",
@@ -82,7 +82,6 @@ function buyItem() {
                 if (response[0].stock_quantity < answer.amount) {
                     console.log("Sorry, we do not have enough inventory to meet your request.")
                 } else {
-                    console.log('Hoopla')
                     var unitAmount = parseInt(response[0].stock_quantity - answer.amount);
                     var totalCost = parseInt(response[0].price * answer.amount);
                     //console.log(unitAmount);

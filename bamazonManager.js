@@ -173,7 +173,15 @@ function newProduct() {
             }, function (err, res) {
                 if (err) throw err;
                 console.log('---Product Added---')
+                updateDepartments();
                 connection.end();
             });
         });
+}
+
+function updateDepartments() {
+    connection.query('INSERT INTO departments (department_name) SELECT DISTINCT department_name FROM products', function(err, res){
+        if (err) throw err;
+        console.log("\n---Departments Updated---")
+    })
 }

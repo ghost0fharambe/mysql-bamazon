@@ -9,6 +9,7 @@ product_name VARCHAR(255) NOT NULL,
 department_name VARCHAR(255),
 price INT(10) NOT NULL,
 stock_quantity INT(10) NOT NULL,
+product_sales INT(30),
 PRIMARY KEY (item_id)
 );
 
@@ -18,3 +19,4 @@ CREATE TABLE departments (
     overhead_costs INT(15),
     PRIMARY KEY (department_ID)
 );
+

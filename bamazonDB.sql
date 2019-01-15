@@ -9,14 +9,14 @@ product_name VARCHAR(255) NOT NULL,
 department_name VARCHAR(255),
 price INT(10) NOT NULL,
 stock_quantity INT(10) NOT NULL,
-product_sales INT(30),
+product_sales INT(30) DEFAULT 0,
 PRIMARY KEY (item_id)
 );
 
 CREATE TABLE departments (
     department_ID INT(10) NOT NULL AUTO_INCREMENT,
     department_name VARCHAR(255),
-    overhead_costs INT(15),
+    overhead_costs INT(15) DEFAULT 0,
     PRIMARY KEY (department_ID)
 );
 
